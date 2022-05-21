@@ -26,13 +26,16 @@ export default function Seats({ footer, setFooter }) {
 
     function book(e) {
         e.preventDefault();
-        const book = {
-            ids: selected,
-            name,
-            cpf
+        if (selected.length) {
+            const book = {
+                ids: selected,
+                name,
+                cpf
+            }
+            setFooter({...footer, book: book});
+            const promise = axios.post("https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many", book);
+            promise.then(navigate('/sucesso'));
         }
-        const promise = axios.post("https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many", book);
-        promise.then(() => navigate('/sucesso'));
     }
 
     return (

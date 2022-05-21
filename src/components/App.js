@@ -18,7 +18,8 @@ export default function App() {
         URLmovie: "",
         title: "",
         weekday: "",
-        time: ""
+        time: "",
+        book: {}
     });
 
     return (
@@ -30,7 +31,7 @@ export default function App() {
                 <Route path="/" element={<Movies />} />
                 <Route path="/sessoes/:movieId" element={<Sections footer={footer} setFooter={setFooter}/>} />
                 <Route path="/assentos/:sectionId" element={<Seats footer={footer} setFooter={setFooter} />} />
-                <Route path="/sucesso" element={<Sucess URL={footer.URLmovie} title={footer.title} weekday={footer.weekday} time={footer.time} />} />
+                <Route path="/sucesso" element={<Sucess title={footer.title} weekday={footer.weekday} time={footer.time} book={footer.book} footer={footer} setFooter={setFooter} />} />
             </Routes>
             <Footer URL={footer.URLmovie} title={footer.title} weekday={footer.weekday} time={footer.time} />
         </BrowserRouter>
