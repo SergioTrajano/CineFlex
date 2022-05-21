@@ -8,7 +8,7 @@ export default function Section({ weekday, date, showtimes, }) {
             </p>
             <div className="buttons">
                 {showtimes.map((time) => 
-                    <Link key={time.id} to={`/sessao/${time.id}`}>
+                    <Link key={time.id} to={`/assentos/${time.id}`}>
                         <div className="button">{time.name}</div>
                     </Link>
                 )}

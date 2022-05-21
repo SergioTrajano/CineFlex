@@ -86,5 +86,15 @@
     margin-right: 8px;
 }
 
+.seats {
+    width: 100%;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(10, 26px);
+    column-gap: 7px;
+    row-gap: 18px;
+}
+
+
 
 

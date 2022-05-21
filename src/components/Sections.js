@@ -12,7 +12,7 @@ export default function Sections() {
     useEffect(() => {
         const promisse = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${movieId}/showtimes`);
         promisse.then(response => setDays(response.data.days));
-    }, []);
+    });
 
     return (
         <div className="screen">
