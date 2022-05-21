@@ -4,15 +4,20 @@ import axios from "axios";
 
 import Section from "./Section";
 
-export default function Sections() {
+export default function Sections({ footer, setFooter }) {
 
     const { movieId } = useParams();
     const [days, setDays] = useState([]);
 
+    function response(r) {
+        setDays(r.data.days);
+        setFooter({...footer, URLmovie: r.data.posterURL, title: r.data.title});
+    }
+
     useEffect(() => {
         const promisse = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${movieId}/showtimes`);
-        promisse.then(response => setDays(response.data.days));
-    });
+        promisse.then((r) => response(r));
+    }, []);
 
     return (
         <div className="screen">

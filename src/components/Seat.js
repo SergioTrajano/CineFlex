@@ -16,7 +16,6 @@ function select (color, isAvaliable, setColor, setBorder, id, selected, setSelec
     } else {
         alert("Esse assento não está disponível");
     }
-    console.log(selected);
 }
 
 export default function Seat({ id, name, available, selected, setSelected }) {

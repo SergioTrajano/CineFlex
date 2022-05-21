@@ -1,11 +1,11 @@
-import { Navigate, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
 import Seat from "./Seat";
 
-export default function Seats() {
+export default function Seats({ footer, setFooter }) {
 
     const { sectionId } = useParams();
     const [seats, setSeats] = useState([]);
@@ -14,9 +14,14 @@ export default function Seats() {
     const [cpf, setCpf] = useState("");
     let navigate = useNavigate();
 
+    function response(data) {
+        setSeats(data.seats);
+        setFooter({...footer, weekday: data.day.weekday, time: data.name});
+    }
+
     useEffect(() => {
         const promisse = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${sectionId}/seats`);
-        promisse.then((response) => setSeats(response.data.seats));
+        promisse.then((r) => response(r.data));
     }, []);
 
     function book(e) {
@@ -127,5 +132,6 @@ const Form = styled.form`
         line-height: 21px;
         align-self: center;
         margin-top: 50px;
+        margin-bottom: 30px;
     }
 `

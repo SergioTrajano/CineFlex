@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function Section({ weekday, date, showtimes, }) {
+    
     return (
         <div className="section">
             <p>

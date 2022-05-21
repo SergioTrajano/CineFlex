@@ -17,7 +17,7 @@ export default function Movies() {
         <div className="screen">
             <p>Selecione o filme</p>
             <div className="movies"> 
-                {movies.map( (movie) => <Movie key={movie.id} id={movie.id} title={movie.title} posterURL={movie.posterURL} overviwe={movie.overviwe} release={movie.releaseDate} />)}
+                {movies.map( (movie) => <Movie key={movie.id} id={movie.id} posterURL={movie.posterURL} />)}
             </div>
         </div>
     );
