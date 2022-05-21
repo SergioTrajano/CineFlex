@@ -12,7 +12,7 @@ export default function Seats({ footer, setFooter }) {
     const [selected, setSelected] = useState([]);
     const [name, setName] = useState("");
     const [cpf, setCpf] = useState("");
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
     function response(data) {
         setSeats(data.seats);

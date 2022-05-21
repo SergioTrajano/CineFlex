@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export default function Footer({ URL, title, weekday, time }) {
 
-    if (URL) {
-
         const description = `${weekday} - ${time}`;
 
         return (
@@ -17,11 +15,6 @@ export default function Footer({ URL, title, weekday, time }) {
                 </div>
             </FooterDiv>
         );
-    } else {
-        return (
-            <></>
-        )
-    }
 }
 
 const FooterDiv = styled.div`

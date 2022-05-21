@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import Movie from "./Movie";
 
-export default function Movies() {
+export default function Movies({ footer, setFooter }) {
 
     const [movies, setMovies] = useState([]);
 
@@ -17,7 +17,7 @@ export default function Movies() {
         <div className="screen">
             <p>Selecione o filme</p>
             <div className="movies"> 
-                {movies.map( (movie) => <Movie key={movie.id} id={movie.id} posterURL={movie.posterURL} />)}
+                {movies.map( (movie) => <Movie key={movie.id} id={movie.id} posterURL={movie.posterURL} footer={footer} setFooter={setFooter} />)}
             </div>
         </div>
     );
