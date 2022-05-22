@@ -4,19 +4,19 @@ import axios from "axios";
 import styled from "styled-components";
 
 import Seat from "./Seat";
+import Data from "./Data";
 
 export default function Seats({ footer, setFooter }) {
 
     const { sectionId } = useParams();
     const [seats, setSeats] = useState([]);
     const [selected, setSelected] = useState([]);
-    const [name, setName] = useState("");
-    const [cpf, setCpf] = useState("");
+    const [data, setData] = useState([]);
     const navigate = useNavigate();
 
-    function response(data) {
-        setSeats(data.seats);
-        setFooter({...footer, weekday: data.day.weekday, time: data.name});
+    function response(dataAPI) {
+        setSeats(dataAPI.seats);
+        setFooter({...footer, weekday: dataAPI.day.weekday, date: dataAPI.day.date, time: dataAPI.name});
     }
 
     useEffect(() => {
@@ -24,16 +24,15 @@ export default function Seats({ footer, setFooter }) {
         promisse.then((r) => response(r.data));
     }, []);
 
-    function book(e) {
+    function sub(e) {
         e.preventDefault();
-        if (selected.length) {
-            const book = {
-                ids: selected,
-                name,
-                cpf
-            }
-            setFooter({...footer, book: book});
-            const promise = axios.post("https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many", book);
+        const sendData = {
+            ids: selected.map((i) => {return i.id}),
+            compradores: data
+        };
+        if (selected.length !== 0) {
+            setFooter({...footer, seats: selected.map((i) => {return i.name}), book: sendData});
+            const promise = axios.post("https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many", footer.book);
             promise.then(navigate('/sucesso'));
         }
     }
@@ -42,7 +41,7 @@ export default function Seats({ footer, setFooter }) {
         <div className="screen">
             <p>Selecione o(s) assento(s)</p>
             <div className="seats">
-                {seats.map((seat, i) => <Seat key={i} id={seat.id} name={seat.name} available={seat.isAvailable} selected={selected} setSelected={setSelected} />)}
+                {seats.map((seat, i) => <Seat key={i} id={seat.id} name={seat.name} available={seat.isAvailable} selected={selected} setSelected={setSelected} data={data} setData={setData} />)}
             </div>
             <Option>
                 <div>
@@ -59,11 +58,8 @@ export default function Seats({ footer, setFooter }) {
                 </div>
             </Option>
             <div className="dados">
-                <Form onSubmit={(e) => book(e)}>
-                    <label htmlFor="NameId">Nome do Comprador:</label>
-                    <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Digite seu nome..." id="NameId" required></input>
-                    <label htmlFor="CpfId">CPF do Comprador:</label>
-                    <input type="text" value={cpf} onChange={(e) => setCpf(e.target.value)} placeholder="Digite seu nome..." id="CpfId" required></input>
+                <Form onSubmit={(e) => sub(e)}>
+                    {data.map((item, i) => <Data key={i} id={selected[i].name} idAssento={item.idAssento} nome={item.nome} cpf={item.cpf} data={data} setData={setData} />)}
                     <button type="submit">Reservar assento(s)</button>
                 </Form>
             </div>

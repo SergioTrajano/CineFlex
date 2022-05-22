@@ -1,46 +1,76 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-export default function Sucess( { title, weekday, time, book, setFooter }) {
+export default function Sucess( { footer, setFooter }) {
 
     const navigate = useNavigate();
 
     function goBack(e) {
         e.preventDefault();
-        setFooter({});
+        setFooter({
+            IdMovie: "",
+            URLmovie: "",
+            title: "",
+            weekday: "",
+            date: "",
+            time: "",
+            seats: [],
+            book: {
+                ids: [],
+                compradores: []
+            }
+        });
         navigate("/");
     }
 
     return (
         <>
-            <div className="screen">
+            <Screen>
                 <p>Pedido feito com sucesso!</p>
                 <Description>
                     <p>Filme e sessão</p>
-                    <p>{title}</p>
-                    <p>{weekday} - {time}</p>
+                    <p>{footer.title}</p>
+                    <p>{footer.date} {footer.time}</p>
                 </Description>
                 <Description>
                     <p>Ingressos</p>
-                    {book.ids.map((item, i) => <p key={i}>Assento {item}</p>)}
+                    {footer.seats.map((item, i) => <p key={i}>Assento {item}</p>)}
                 </Description>
                 <Description>
-                    <p>Comprador</p>
-                    <p>Nome: {book.name}</p>
-                    <p>CPF: {book.cpf}</p>
+                    <p>Compradores</p>
+                    {footer.book.compradores.map((person, i) => 
+                    <div key={i}>
+                        <p>Nome: {person.nome}</p>
+                        <p>CPF: {person.cpf}</p>
+                    </div>)}
                 </Description>
                 <Button onClick={(e) => goBack(e)}>Voltar pra Home</Button>
-            </div>
+            </Screen>
         </>
     );
 }
+
+const Screen = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 67px;
+    margin-bottom: 117px;
+
+    p {
+    margin: 18.5px 0;
+    font-size: 24px;
+    line-height: 28px;
+    color: #247A6B;
+    }
+`
 
 const Description = styled.div`
     width: 100%;
     margin-bottom: 15px;
     margin-left: 30px;
 
-    p:first-child {
+    > p:first-child {
         font-size: 24px;
         line-height: 28px;
         font-weight: bold;
@@ -53,6 +83,10 @@ const Description = styled.div`
         line-height: 25px;
         color: #293845;
         margin: 1px;
+    }
+
+    div {
+        margin-bottom: 8px;
     }
 
 `
