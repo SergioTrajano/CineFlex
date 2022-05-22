@@ -33,7 +33,7 @@ function select (name, color, isAvaliable, setColor, setBorder, id, selected, se
 }
 
 export default function Seat({ id, name, available, selected, setSelected, data, setData }) {
-
+    
     const [color, setColor] = useState(available ? "#C3CFD9" : "#FBE192");
     const [border, setBorder] = useState(available ? "#808F9D" : "#F7C52B")
 

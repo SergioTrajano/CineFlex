@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import Section from "./Section";
 
+import Gif from "../assets/Spinner-1s-200px.gif";
 
 export default function Sections({ footer, setFooter }) {
 
@@ -20,6 +21,14 @@ export default function Sections({ footer, setFooter }) {
         const promisse = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${movieId}/showtimes`);
         promisse.then((r) => response(r));
     }, []);
+
+    if (days.length === 0) {
+        return (
+            <Loadinng>
+                <img src={Gif} alt="" />
+            </Loadinng>
+        );
+    }
 
     return (
         <Screen>
@@ -42,4 +51,14 @@ const Screen = styled.div`
         line-height: 7.45vw;
         color: #293845;
     }
+`
+
+const Loadinng = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 17.87vw;
+    margin-bottom: 31.2vw;
 `

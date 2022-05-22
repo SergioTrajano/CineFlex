@@ -55,6 +55,7 @@ const Screen = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: 17.86vw;
+    margin-bottom: 10px;
 
     p {
     margin: 4.93vw 0;

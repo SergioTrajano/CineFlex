@@ -4,6 +4,8 @@ import styled from "styled-components";
 
 import Movie from "./Movie";
 
+import Gif from "../assets/Spinner-1s-200px.gif";
+
 export default function Movies({ footer, setFooter }) {
 
     const [movies, setMovies] = useState([]);
@@ -13,6 +15,13 @@ export default function Movies({ footer, setFooter }) {
         promisse.then((response) => setMovies(response.data));
     }, []);
     
+    if (movies.length === 0) {
+        return (
+            <Loadinng>
+                <img src={Gif} alt="" />
+            </Loadinng>
+        );
+    }
 
     return (
         <Screen>
@@ -58,4 +67,13 @@ const Catalog = styled.div`
         height: 100%;
     }
 
+`
+const Loadinng = styled.div`
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 17.87vw;
+    margin-bottom: 31.2vw;
 `

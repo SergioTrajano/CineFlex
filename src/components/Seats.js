@@ -6,6 +6,8 @@ import styled from "styled-components";
 import Seat from "./Seat";
 import Data from "./Data";
 
+import Gif from "../assets/Spinner-1s-200px.gif";
+
 export default function Seats({ footer, setFooter }) {
 
     const { sectionId } = useParams();
@@ -32,9 +34,17 @@ export default function Seats({ footer, setFooter }) {
         };
         if (selected.length !== 0) {
             setFooter({...footer, seats: selected.map((i) => {return i.name}), book: sendData});
-            const promise = axios.post("https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many", footer.book);
+            const promise = axios.post("https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many", sendData);
             promise.then(navigate('/sucesso'));
         }
+    }
+
+    if (seats.length === 0) {
+        return (
+            <Loadinng>
+                <img src={Gif} alt="" />
+            </Loadinng>
+        );
     }
 
     return (
@@ -157,4 +167,13 @@ const Form = styled.form`
         margin-top: 13.3vw;
         margin-bottom: 8vw;
     }
+`
+const Loadinng = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 17.87vw;
+    margin-bottom: 31.2vw;
 `
