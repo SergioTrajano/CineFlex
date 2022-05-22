@@ -23,6 +23,8 @@ export default function BackButton({ footer, setFooter }) {
 }
 
 const Button = styled.button`
+    width: 17vw;
+    height: 10vw;
     position: fixed;
     top: 0;
     left: 0;
@@ -30,7 +32,7 @@ const Button = styled.button`
     justify-content: center;
     align-items: center;
     background-color: #C3CED9;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 4.8vw;
+    line-height: 5.6vw;
     color: #FFFFFF;
 `

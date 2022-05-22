@@ -45,14 +45,14 @@ export default function Seat({ id, name, available, selected, setSelected, data,
 }
 
 const SeatDiv = styled.div`
-    width: 26px;
-    height: 26px;
+    width: 6.93vw;
+    height: 6.93vw;
     border-radius: 50%;
     background-color: ${props => props.color};
     border: solid 1px ${props => props.border};
     color: #000000;
-    font-size: 11px;
-    line-height: 13px;
+    font-size: 2.93vw;
+    line-height: 3.47vw;
     display: flex;
     justify-content: center;
     align-items: center;

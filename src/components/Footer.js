@@ -22,27 +22,27 @@ const FooterDiv = styled.div`
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 117px;
+    height: 31.2vw;
     background-color: #DFE6ED;
     border: solid 1px #9EADBA;
     display: flex;
     align-items: center;
-    padding: 14px 10px;
+    padding: 1.6vh 2.67vw;
 
     p {
-        font-size: 26px;
-        line-height: 30px;
+        font-size: 6.93vw;
+        line-height: 8vw;
         color: #293845;
     }
 `
 
 const Frame = styled.div`
-    width: 64px;
-    height: 89px;
+    width: 17.07vw;
+    height: 23.74vw;
     border-radius: 2px;
     box-shadow: 0px 2px 4px 2px #0000001A;
     padding: 8px;
-    margin-right: 14px;
+    margin-right: 3.73vw;
     background-color: #FFFFFF;
 
     img {

@@ -48,13 +48,13 @@ export default function App() {
 
 const Top = styled.div`
     width: 100%;
-    height: 67px;
+    height: 17.87vw;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #C3CFD9;
-    font-size: 34px;
-    line-height: 40px;
+    font-size: 9.1vw;
+    line-height: 10.7vw;
     color: #E8833A;
     position: fixed;
     top: 0;

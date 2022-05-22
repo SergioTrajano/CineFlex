@@ -7,7 +7,7 @@ export default function Movie({ id, posterURL, footer, setFooter }) {
     }
 
     return (
-        <div className="movie">
+        <div>
             <Link to={`/sessoes/${id}`} >
                 <img onClick={saveId} src={posterURL} alt=""/>
             </Link>

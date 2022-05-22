@@ -54,13 +54,12 @@ const Screen = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 67px;
-    margin-bottom: 117px;
+    margin-top: 17.86vw;
 
     p {
-    margin: 18.5px 0;
-    font-size: 24px;
-    line-height: 28px;
+    margin: 4.93vw 0;
+    font-size: 6.4vw;
+    line-height: 7.47vw;
     color: #247A6B;
     }
 `
@@ -68,19 +67,19 @@ const Screen = styled.div`
 const Description = styled.div`
     width: 100%;
     margin-bottom: 15px;
-    margin-left: 30px;
+    margin-left: 8vw;
 
     > p:first-child {
-        font-size: 24px;
-        line-height: 28px;
+        font-size: 6,4vw;
+        line-height: 7.47vw;
         font-weight: bold;
         margin-bottom: 8px;
         margin-top: 15px;
     }
 
     p {
-        font-size: 22px;
-        line-height: 25px;
+        font-size: 5.87vw;
+        line-height: 6.67vw;
         color: #293845;
         margin: 1px;
     }
@@ -92,13 +91,12 @@ const Description = styled.div`
 `
 
 const Button = styled.button`
-    width: 225px;
-    height: 42px;
+    width: 60vw;
+    height: 11.2vw;
     background-color: #E8833A;
     border-radius: 3px;
     color: #FFFFFF;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 4.8vw;
+    line-height: 5.6vw;
     margin-top: 50px;
-    margin-bottom: 20px;
 `
