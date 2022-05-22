@@ -25,7 +25,7 @@ export default function Movies({ footer, setFooter }) {
 
     return (
         <Screen>
-            <p>Selecione o filmeCINE</p>
+            <p>Selecione o filme</p>
             <Catalog> 
                 {movies.map( (movie) => <Movie key={movie.id} id={movie.id} posterURL={movie.posterURL} footer={footer} setFooter={setFooter} />)}
             </Catalog>
