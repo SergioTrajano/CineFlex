@@ -83,6 +83,9 @@ const Screen = styled.div`
     align-items: center;
     margin-top: 17.87vw;
     margin-bottom: 31.2vw;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 
     p {
         margin: 4.92vw 0;
@@ -98,6 +101,9 @@ const Place = styled.div`
     grid-template-columns: repeat(10, 6.93vw);
     column-gap: 1.87vw;
     row-gap: 4.8vw;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 `
 
 const Option = styled.div`
@@ -105,6 +111,9 @@ const Option = styled.div`
     justify-content: space-evenly;
     margin-top: 1.8vh;
     width: 100%;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 
     div {
         display: flex;
@@ -129,6 +138,9 @@ const SeatDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 `
 
 const Form = styled.form`
@@ -136,6 +148,9 @@ const Form = styled.form`
     flex-direction: column;
     margin: 4.68vh;
     padding: 0 6.4vw;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 
     input {
         width: 86.4vw;
@@ -177,4 +192,7 @@ const Loadinng = styled.div`
     justify-content: center;
     margin-top: 17.87vw;
     margin-bottom: 31.2vw;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 `

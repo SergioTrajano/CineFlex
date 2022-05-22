@@ -28,6 +28,9 @@ const FooterDiv = styled.div`
     display: flex;
     align-items: center;
     padding: 1.6vh 2.67vw;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 
     p {
         font-size: 6.93vw;
@@ -44,6 +47,9 @@ const Frame = styled.div`
     padding: 8px;
     margin-right: 3.73vw;
     background-color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 
     img {
         width: 100%;

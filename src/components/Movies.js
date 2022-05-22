@@ -25,7 +25,7 @@ export default function Movies({ footer, setFooter }) {
 
     return (
         <Screen>
-            <p>Selecione o filme</p>
+            <p>Selecione o filmeCINE</p>
             <Catalog> 
                 {movies.map( (movie) => <Movie key={movie.id} id={movie.id} posterURL={movie.posterURL} footer={footer} setFooter={setFooter} />)}
             </Catalog>
@@ -39,6 +39,9 @@ const Screen = styled.div`
     align-items: center;
     margin-top: 17.87vw;
     margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 
     p {
         margin: 4.92vw 0;
@@ -53,6 +56,9 @@ const Catalog = styled.div`
     grid-template-columns: 38.7vw 38.7vw;
     row-gap: 10px;
     column-gap: 8vw;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 
     div {
         width: 38.7vw;
@@ -77,4 +83,7 @@ const Loadinng = styled.div`
     justify-content: center;
     margin-top: 17.87vw;
     margin-bottom: 31.2vw;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 `

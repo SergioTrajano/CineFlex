@@ -56,4 +56,7 @@ const SeatDiv = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 `

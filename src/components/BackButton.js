@@ -35,4 +35,7 @@ const Button = styled.button`
     font-size: 4.8vw;
     line-height: 5.6vw;
     color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 `

@@ -44,12 +44,16 @@ const Screen = styled.div`
     align-items: center;
     margin-top: 17.87vw;
     margin-bottom: 31.2vw;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 
     p {
         margin: 4.92vw 0;
         font-size: 6.4vw;
         line-height: 7.45vw;
         color: #293845;
+        text-decoration: none;
     }
 `
 
@@ -62,4 +66,7 @@ const Loadinng = styled.div`
     justify-content: center;
     margin-top: 17.87vw;
     margin-bottom: 31.2vw;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 `

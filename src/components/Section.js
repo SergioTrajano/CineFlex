@@ -23,12 +23,16 @@ const Day = styled.div`
     width: 100%;
     margin-bottom: 5.3vw;
     padding: 0 6.7vw;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 
     p {
         font-size: 5.3vw;
         line-height: 6.13vw;
         color: #293845;
         margin-bottom: 5.3vw;
+        text-decoration: none;
     }
 
     > div {
@@ -37,6 +41,7 @@ const Day = styled.div`
         grid-template-columns: repeat(3, 22.13vw);
         column-gap: 2.13vw;
         row-gap: 2.13vw;
+        text-decoration: none;
     }
 
     > div div {
@@ -49,5 +54,10 @@ const Day = styled.div`
         font-size: 4.8vw;
         line-height: 5.6vw;
         color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    a {
+        text-decoration: none;
     }
 `

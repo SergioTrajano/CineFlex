@@ -10,8 +10,6 @@ import Footer from "./Footer";
 import BackButton from "./BackButton";
 
 import "../css/reset.css";
-import "../css/globalStyle.css";
-
 
 export default function App() {
 
@@ -59,4 +57,7 @@ const Top = styled.div`
     position: fixed;
     top: 0;
     left: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 `

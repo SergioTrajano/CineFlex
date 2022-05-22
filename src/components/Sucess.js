@@ -56,6 +56,9 @@ const Screen = styled.div`
     align-items: center;
     margin-top: 17.86vw;
     margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 
     p {
     margin: 4.93vw 0;
@@ -69,6 +72,9 @@ const Description = styled.div`
     width: 100%;
     margin-bottom: 15px;
     margin-left: 8vw;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 
     > p:first-child {
         font-size: 6,4vw;
@@ -100,4 +106,7 @@ const Button = styled.button`
     font-size: 4.8vw;
     line-height: 5.6vw;
     margin-top: 50px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 `
