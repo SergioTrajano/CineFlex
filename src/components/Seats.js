@@ -67,7 +67,7 @@ export default function Seats({ footer, setFooter }) {
                     <p>Indisponível</p>
                 </div>
             </Option>
-            <div className="dados">
+            <div>
                 <Form onSubmit={(e) => sub(e)}>
                     {data.map((item, i) => <Data key={i} id={selected[i].name} idAssento={item.idAssento} nome={item.nome} cpf={item.cpf} data={data} setData={setData} />)}
                     <button type="submit">Reservar assento(s)</button>
@@ -86,6 +86,7 @@ const Screen = styled.div`
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
     text-decoration: none;
+    overflow-x: hidden; 
 
     p {
         margin: 4.92vw 0;
@@ -146,7 +147,7 @@ const SeatDiv = styled.div`
 const Form = styled.form`
     display: flex;
     flex-direction: column;
-    margin: 4.68vh;
+    margin: 10.76vw;
     padding: 0 6.4vw;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
